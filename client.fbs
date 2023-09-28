@@ -1,0 +1,35 @@
+namespace client_space;
+
+enum Gender: uint8 {
+  Male = 0,
+  Female = 1
+}
+
+table Person {
+  name: string;
+  age: uint8;
+  weight: float32;
+  gender: Gender;
+}
+
+table Group {
+  group_name: string;
+  avg_age: float32;
+  avg_weight: float32;
+  names: [string];
+}
+
+union PersonOrGroup {
+  Person,
+  Group
+}
+
+table Client{
+    type : PersonOrGroup;
+}
+
+table Data {
+  data: [Client];
+}
+
+root_type Data;
