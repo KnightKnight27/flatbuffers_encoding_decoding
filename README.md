@@ -30,15 +30,15 @@ Before you begin, make sure you have the following prerequisites installed on yo
 5. 
    ```bash
    cd flatbuffers && chmod +x /content/flatbuffers/flatc
-6. 
+6. Make the c++ headers for corresponding schema file.
    ```bash
    flatc -c client.fbs
-7.
+7. g++ command to compile encrypt.cpp file and execute it 
    ```bash
    g++ -I flatbuffers/include -o e encrypt.cpp && ./e 
-8.
+8. Make Python generated files for it's client.fbs
    ```bash
    flatc --python client.fbs 
-9.
+9. Decoder to read/deserialize the bytes.
    ```bash
    python decoder.py 
